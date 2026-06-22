@@ -568,7 +568,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.08;let
   if(reduce){return;}
 
   // Lenis smooth scroll
-  var lenis=new Lenis({duration:1.2,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothWheel:true});
+  var lenis=new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
   function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
   requestAnimationFrame(raf);
 
